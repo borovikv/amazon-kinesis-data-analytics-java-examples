@@ -18,7 +18,7 @@ import java.util.Properties;
 public class S3StreamingSinkJob {
     private static final String region = "us-west-2";
     private static final String inputStreamName = "alpha0-data-event-validator";
-    private static final String s3SinkPath = "s3a://codemobs-datalab/hudi/new/";
+    private static final String s3SinkPath = "s3a://codemobs-datalab/hudi/kaktus/";
 
     private static DataStream<String> createSourceFromStaticConfig(StreamExecutionEnvironment env) {
 
@@ -60,13 +60,13 @@ public class S3StreamingSinkJob {
         env.execute("Flink S3 Streaming Sink Job");
     }
 
-    public static final class Tokenizer implements FlatMapFunction<String, String> {
-
-        @Override
-        public void flatMap(String value, Collector<String> out) {
-            out.collect(value);
-        }
-    }
+//    public static final class Tokenizer implements FlatMapFunction<String, String> {
+//
+//        @Override
+//        public void flatMap(String value, Collector<String> out) {
+//            out.collect(value);
+//        }
+//    }
 //    public static final class Tokenizer
 //            implements FlatMapFunction<String, Tuple2<String, Integer>> {
 //
